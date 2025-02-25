@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Převodník jednotek</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward_ios" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+</head>
+<body>
+    <p class="p2">Převodníky jednotek</p>
+
+
+<!-- Výběr typu převodníku -->
+
+<div class="vyber-jednotek">
+<p class="p">Vyberte veličinu</p><br>
+<select class="menu" id="converter">
+    <option value="weight">Hmotnost</option>
+    <option value="length">Délka</option>
+    <option value="temperature">Teplota</option>
+</select>
+</div>
+
+
+<!--Převodník jednotek teploty-->
+<div id="temperature-code" class="code-container">
+            <h2>Převodník jednotek teploty</h2><br><br>
+            <select class="menu" id="unitSelectTemperature">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin (K)</option>
+                <option value="newton">Newton (°N)</option>
+            </select>
+            
+        
+            <input class="hodnota" type="number" id="tempInput" placeholder="Zadejte hodnotu" oninput="validateNumber(this)">
+        
+            <h3>Výsledky:</h3>
+            <div class="vysledky">
+                <p>Celsius: <span id="celsiusOutput">--</span></p>
+                <p>Fahrenheit: <span id="fahrenheitOutput">--</span></p>
+                <p>Kelvin: <span id="kelvinOutput">--</span></p>
+                <p>Newton: <span id="newtonOutput">--</span></p>
+            </div>
+</div>
+
+
+
+
+<!--Převodník jednotek délky-->
+<div id="length-code" class="code-container">
+        <h2>Převodník jednotek délky</h2><br><br>
+        <select class="menu" id="unitSelectLength">
+            <option value="pikometr">Pikometr (pm)</option>
+            <option value="nanometr">Nanometr (nm)</option>
+            <option value="mikrometr">Mikrometr (µm)</option>
+            <option value="milimetr">Milimetr (mm)</option>
+            <option value="centimetr">Centimetr (cm)</option>
+            <option value="decimetr">Decimetr (dm)</option>
+            <option value="metr">Metr (m)</option>
+            <option value="kilometr">Kilometr (km)</option>
+        </select>
+        
+    
+        <input class="hodnota" type="number" id="lengthInput" placeholder="Zadejte hodnotu" oninput="validateNumber(this)">
+    
+        <h3>Výsledky:</h3>
+        <div class="vysledky">
+            <p>Pikometr: <span id="pikometrOutput">--</span></p>
+            <p>Nanometr: <span id="nanometrOutput">--</span></p>
+            <p>Mikrometr: <span id="mikrometrOutput">--</span></p>
+            <p>Milimetr: <span id="milimetrOutput">--</span></p>
+            <p>Centimetr: <span id="centimetrOutput">--</span></p>
+            <p>Decimetr: <span id="decimetrOutput">--</span></p>
+            <p>Metr: <span id="metrOutput">--</span></p>
+            <p>Kilometr: <span id="kilometrOutput">--</span></p>
+        </div>
+</div>
+
+
+
+
+<!--Převodník jednotek hmotnosti-->
+<div id="weight-code" class="code-container">
+        <h2>Převodník jednotek teploty</h2><br><br>
+        <select class="menu" id="unitSelectWeight">
+            <option value="gram">Gram (g)</option>
+            <option value="dekagram">Dekagram (dkg)</option>
+            <option value="kilogram">Kilogram (kg)</option>
+            <option value="tuna">Tuna (t)</option>
+        </select>
+        
+    
+        <input class="hodnota" type="number" id="weightInput" placeholder="Zadejte hodnotu" oninput="validateNumber(this)">
+    
+        <h3>Výsledky:</h3>
+        <div class="vysledky">
+            <p>Gram: <span id="gramOutput">--</span></p>
+            <p>Dekagram: <span id="dekagramOutput">--</span></p>
+            <p>kilogram: <span id="kilogramOutput">--</span></p>
+            <p>Tuna: <span id="tunaOutput">--</span></p>
+        </div>
+</div>
+
+    <script type="module" src="script.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+</body>
+</html>

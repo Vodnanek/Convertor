@@ -1,0 +1,220 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #06071e;
+    color: #ffffff;
+}
+
+
+.code-container {
+    margin-top: 20px;
+    padding-bottom: 200px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    display: none; /* Kód bude skrytý dokud není vybrán */
+    position: absolute; /* Nebo použij flex/grid pro lepší kontrolu */
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 51%;
+    color: #ffffff;
+    border: 3px solid;
+    height: 64vh;
+    width: 50vw;
+    border-radius: 50px;
+    box-shadow: 0 0 10px white;
+    overflow: hidden;
+ 
+}
+
+.vysledky {
+    overflow: hidden;
+    overflow-y: scroll;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    transform: translate(10%, 10%);
+    height: 230px;
+    mask-image: linear-gradient(to bottom, transparent, black 2%, 98%, transparent);
+    -webkit-mask-image: black 2%, black 98%, transparent;
+}
+
+.vyber-jednotek {
+    position: absolute;
+    text-align: left;
+    top: 30%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+
+}
+
+.hodnota {
+    background-color: #000000;
+    color: #ffffff;
+    width: 25rem !important;
+    padding: 11px;
+    font-size: 16px;
+    border: 4px solid white;
+    border-radius: 50vh;
+    box-shadow: 0 0 10px white;
+    transition: 0.1s;
+    top: 151px !important;
+    left: 75% !important;
+    transform: translate(-50%, -50%) !important;
+    position: absolute !important;
+}
+
+.hodnota:hover {
+    box-shadow: 0 0 15px white;
+    transition: 0.1s;
+}
+
+.hodnota:focus {
+    box-shadow: 0 0 20px #ffff9d;
+    transition: 0.1s;
+}
+
+.hodnota::placeholder {
+    color: #b0b0b0;
+}
+
+h2 {
+    margin-top: 25px;
+}
+
+h3 {
+    margin-top: 35%;
+}
+
+.p {
+    text-align: center;
+    font-size: 25px;
+    width: 230px;
+    margin-bottom: 0;
+}
+
+.p2 {
+    display: inline;
+    transform: translate(-50%, -50%);
+    left: 48%;
+    position: absolute;
+    margin: 50px;
+    text-shadow: 0 0 20px rgb(255, 255, 255);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.material-symbols-outlined {
+
+    position: absolute;
+    right: 0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.1s ease-in-out;
+    font-variation-settings: 
+    'FILL' 0, 
+    'wght' 400, 
+    'GRAD' 0, 
+    'opsz' 24;
+}
+
+.material-symbols-outlined.open {
+    transform: translateY(-50%) rotate(90deg);
+    transition: 0.1s ease-in-out;
+}
+
+.choices[data-type*="select-one"]::after {
+    display: none !important; /* Skryje šipku */
+}
+
+
+
+/* Hlavní box <select> */
+.choices {
+    text-align: center !important;
+    top: 42px !important;
+    left: 25% !important;
+    transform: translate(-50%, -50%) !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    width: 24.5rem !important;
+    padding: 20px !important;
+    font-size: 16px !important;
+    border: 4px solid rgb(255, 255, 255) !important;
+    border-radius: 50vh !important;
+    box-shadow: 0 0 10px white !important;
+
+
+}
+  
+.choices:hover {
+    box-shadow: 0 0 15px white !important;
+    transition: 0.1s !important;
+    background-color: #000000;
+}
+
+.choices:focus {
+    box-shadow: 0 0 20px #ffff9d !important;
+    transition: 0.1s !important; 
+    border: 2px;
+}
+
+/* Roletka s možnostmi */
+.choices__list--dropdown {
+    transform: translateX(-50%);
+    left: 50% !important;
+    top: 140% !important;
+    border: 2px solid !important;
+    background: rgb(0, 0, 0) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 0 10px white !important;
+    width: 100%;
+}
+
+
+
+.choices__list--dropdown .choices__item {
+    background-color: rgb(0, 0, 0) !important;
+    color: white;
+    padding: 8px 12px;
+    border: 1px solid;
+    padding: 9px !important;
+
+}
+
+.choices__list--dropdown .choices__item:hover {
+    background-color: rgb(49, 49, 49) !important;
+}
+
+.choices__list--single .choices__item {
+    background-color: transparent !important;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.choices__list--single .choices__item:hover {
+    background-color: rgb(0, 0, 0) !important;
+}
+
+
+.choices__inner {
+    text-align: center !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    width: 50% !important;
+    height: 0% !important;
+    transform: translate(-50%, -50%) !important;
+    top: 50% !important;
+    left: 50% !important;
+    position: absolute !important;   
+}
+
+::-webkit-scrollbar {
+    opacity: 0;
+    width: 0;
+}
+
