@@ -9,33 +9,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 </head>
 <body>
-    <p class="p2">Převodníky jednotek</p>
+    <main class="app">
+        <header class="header">
+            <p class="p2">Převodníky jednotek</p>
+        </header>
 
-
-<!-- Výběr typu převodníku -->
-
-<div class="vyber-jednotek">
-<p class="p">Vyberte veličinu</p><br>
-<select class="menu" id="converter">
-    <option value="weight">Hmotnost</option>
-    <option value="length">Délka</option>
-    <option value="temperature">Teplota</option>
-</select>
-</div>
-
-
-<!--Převodník jednotek teploty-->
-<div id="temperature-code" class="code-container">
-            <h2>Převodník jednotek teploty</h2><br><br>
-            <select class="menu" id="unitSelectTemperature">
-                <option value="celsius">Celsius (°C)</option>
-                <option value="fahrenheit">Fahrenheit (°F)</option>
-                <option value="kelvin">Kelvin (K)</option>
-                <option value="newton">Newton (°N)</option>
+        <section class="vyber-jednotek">
+            <p class="p">Vyberte veličinu</p>
+            <select class="menu" id="converter">
+                <option value="weight">Hmotnost</option>
+                <option value="length">Délka</option>
+                <option value="temperature">Teplota</option>
             </select>
-            
-        
-            <input class="hodnota" type="number" id="tempInput" placeholder="Zadejte hodnotu" oninput="validateNumber(this)">
+        </section>
+
+        <section class="code-wrapper">
+            <div id="temperature-code" class="code-container">
+            <h2>Převodník jednotek teploty</h2>
+            <div class="input-row">
+                <select class="menu" id="unitSelectTemperature">
+                    <option value="celsius">Celsius (°C)</option>
+                    <option value="fahrenheit">Fahrenheit (°F)</option>
+                    <option value="kelvin">Kelvin (K)</option>
+                    <option value="newton">Newton (°N)</option>
+                </select>
+                <input class="hodnota" type="number" id="tempInput" placeholder="Zadejte hodnotu" oninput="validateNumber(this)">
+            </div>
         
             <h3>Výsledky:</h3>
             <div class="vysledky">
@@ -47,25 +46,21 @@
 </div>
 
 
-
-
-<!--Převodník jednotek délky-->
 <div id="length-code" class="code-container">
-        <h2>Převodník jednotek délky</h2><br><br>
-        <select class="menu" id="unitSelectLength">
-            <option value="pikometr">Pikometr (pm)</option>
-            <option value="nanometr">Nanometr (nm)</option>
-            <option value="mikrometr">Mikrometr (µm)</option>
-            <option value="milimetr">Milimetr (mm)</option>
-            <option value="centimetr">Centimetr (cm)</option>
-            <option value="decimetr">Decimetr (dm)</option>
-            <option value="metr">Metr (m)</option>
-            <option value="kilometr">Kilometr (km)</option>
-        </select>
-        
-    
-        <input class="hodnota" type="number" id="lengthInput" placeholder="Zadejte hodnotu" oninput="validateNumber(this)">
-    
+        <h2>Převodník jednotek délky</h2>
+        <div class="input-row">
+            <select class="menu" id="unitSelectLength">
+                <option value="pikometr">Pikometr (pm)</option>
+                <option value="nanometr">Nanometr (nm)</option>
+                <option value="mikrometr">Mikrometr (µm)</option>
+                <option value="milimetr">Milimetr (mm)</option>
+                <option value="centimetr">Centimetr (cm)</option>
+                <option value="decimetr">Decimetr (dm)</option>
+                <option value="metr">Metr (m)</option>
+                <option value="kilometr">Kilometr (km)</option>
+            </select>
+            <input class="hodnota" type="number" id="lengthInput" placeholder="Zadejte hodnotu" oninput="validateNumber(this)">
+        </div>
         <h3>Výsledky:</h3>
         <div class="vysledky">
             <p>Pikometr: <span id="pikometrOutput">--</span></p>
@@ -80,20 +75,17 @@
 </div>
 
 
-
-
-<!--Převodník jednotek hmotnosti-->
 <div id="weight-code" class="code-container">
-        <h2>Převodník jednotek teploty</h2><br><br>
-        <select class="menu" id="unitSelectWeight">
-            <option value="gram">Gram (g)</option>
-            <option value="dekagram">Dekagram (dkg)</option>
-            <option value="kilogram">Kilogram (kg)</option>
-            <option value="tuna">Tuna (t)</option>
-        </select>
-        
-    
-        <input class="hodnota" type="number" id="weightInput" placeholder="Zadejte hodnotu" oninput="validateNumber(this)">
+        <h2>Převodník jednotek hmotnosti</h2>
+        <div class="input-row">
+            <select class="menu" id="unitSelectWeight">
+                <option value="gram">Gram (g)</option>
+                <option value="dekagram">Dekagram (dkg)</option>
+                <option value="kilogram">Kilogram (kg)</option>
+                <option value="tuna">Tuna (t)</option>
+            </select>
+            <input class="hodnota" type="number" id="weightInput" placeholder="Zadejte hodnotu" oninput="validateNumber(this)">
+        </div>
     
         <h3>Výsledky:</h3>
         <div class="vysledky">
@@ -103,6 +95,8 @@
             <p>Tuna: <span id="tunaOutput">--</span></p>
         </div>
 </div>
+        </section>
+    </main>
 
     <script type="module" src="script.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
