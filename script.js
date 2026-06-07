@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const selectElements = document.querySelectorAll(".menu"); // Vybere všechny selecty
+    const selectElements = document.querySelectorAll(".menu");
 
     selectElements.forEach((select) => {
         new Choices(select, {
@@ -20,21 +20,23 @@ window.addEventListener("load", convertLength);
 
 
 function formatNumber(num) {
-    if (num === 0) return "0"; // Pokud je číslo přesně 0, zobraz "0"
-    return parseFloat(num.toFixed(100)); // 50 významných číslic
+    if (num === 0) return "0";
+    return parseFloat(num.toFixed(100));
+}
+
+function validateNumber(input) {
+    if (!input) return;
+    const normalized = input.value.replace(/,/g, '.').replace(/[^0-9.\-]/g, '');
+    const parts = normalized.split('.');
+    input.value = parts.length > 2 ? parts[0] + '.' + parts.slice(1).join('') : normalized;
 }
 
 
-  
-
-  // Funkce pro změnu zobrazeného kódu
-  document.getElementById('converter').addEventListener('change', function() {
-    // Skrytí všech kódů
+document.getElementById('converter').addEventListener('change', function() {
     document.getElementById('temperature-code').style.display = 'none';
     document.getElementById('length-code').style.display = 'none';
     document.getElementById('weight-code').style.display = 'none';
 
-    // Zobrazení kódu podle výběru
     if (this.value === 'temperature') {
         document.getElementById('temperature-code').style.display = 'block';
     } else if (this.value === 'length') {
@@ -44,10 +46,8 @@ function formatNumber(num) {
     }
 });
 
-// Aktivace výběru při načtení stránky (první možnost je již aktivní)
 document.getElementById('converter').dispatchEvent(new Event('change'));
 
-//Funkce pro převod jednotek teploty
 function convertTemperature() {
     let inputUnit = document.getElementById("unitSelectTemperature").value;
     let inputValue = parseFloat(document.getElementById("tempInput").value);
@@ -92,8 +92,6 @@ function resetTemperatureOutputs() {
 
 
 
-
-//Funkce pro převod jednotek délky
 function convertLength() {
     let inputUnit = document.getElementById("unitSelectLength").value;
     let inputValue = parseFloat(document.getElementById("lengthInput").value);
@@ -162,8 +160,6 @@ function resetLengthOutputs() {
 
 
 
-
-//Funkce pro převod jednotek hmotnosti
 function convertWeight() {
     let inputUnit = document.getElementById("unitSelectWeight").value;
     let inputValue = parseFloat(document.getElementById("weightInput").value);
@@ -206,38 +202,3 @@ function resetWeightOutputs() {
     document.getElementById("tunaOutput").textContent = "--";
 }
 
-const dropdownHeader = document.querySelector('.dropdown-header');
-const dropdownMenu = document.querySelector('.dropdown-menu');
-const vyberJednotek = document.querySelector('.vyber-jednotek');
-
-const dropdownContainer = document.querySelector('.dropdown-container');
-const materialSymbolsOutlined = document.querySelector('.dropdown-container > .material-symbols-outlined');
-const form = document.querySelector('form');
-const hiddenInput = document.createElement('input');
-
-vyberJednotek.addEventListener('mouseover', () => {
-    dropdownHeader.classList.add('open');
-    dropdownMenu.classList.add('open');
-    materialSymbolsOutlined.classList.add('open');
-});
-vyberJednotek.addEventListener('mouseleave', () => {
-    dropdownHeader.classList.remove('open');
-    dropdownMenu.classList.remove('open');
-    materialSymbolsOutlined.classList.remove('open');
-});
-dropdownHeader.addEventListener('click', () => {
-    dropdownHeader.classList.toggle('open');
-    dropdownMenu.classList.toggle('open');
-    materialSymbolsOutlined.classList.toggle('open');
-
-});
-
-
-dropdownMenu.addEventListener('click', (event) => {
-    const selectedItem = event.target;
-    if (selectedItem.dataset.value) {
-        dropdownHeader.textContent = selectedItem.textContent;
-        hiddenInput.value = selectedItem.dataset.value;
-        dropdownMenu.classList.remove('open');
-    }
-});
